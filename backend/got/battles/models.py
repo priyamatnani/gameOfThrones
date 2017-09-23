@@ -21,7 +21,7 @@ class BattleSet(models.Model):
     major_death = models.BooleanField()
     major_capture = models.BooleanField()
     attacker_size = models.IntegerField()
-    defender_size= models.IntegerField()
+    defender_size = models.IntegerField()
     attacker_commander = models.TextField(max_length=200, default='', null=True)
     defender_commander = models.TextField(max_length=200, default='', null=True)
     summer = models.BooleanField()

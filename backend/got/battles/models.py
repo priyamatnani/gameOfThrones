@@ -1,0 +1,30 @@
+from django.db import models
+
+# Create your models here.
+
+class BattleSet(models.Model):
+    name = models.TextField(max_length=200, default='')
+    year = models.IntegerField(null=True)
+    battle_number = models.IntegerField()
+    attacker_king = models.TextField(max_length=200, default='')
+    defender_king = models.TextField(max_length=200, default='')
+    attacker_1 = models.TextField(max_length=200, default='', null=True)
+    attacker_2 = models.TextField(max_length=200, default='', null=True)
+    attacker_3 = models.TextField(max_length=200, default='', null=True)
+    attacker_4 = models.TextField(max_length=200, default='', null=True)
+    defender_1 = models.TextField(max_length=200, default='', null=True)
+    defender_2 = models.TextField(max_length=200, default='', null=True)
+    defender_3 = models.TextField(max_length=200, default='', null=True)
+    defender_4 = models.TextField(max_length=200, default='', null=True)
+    attacker_outcome = models.TextField(max_length=20)
+    battle_type = models.TextField(max_length=20)
+    major_death = models.BooleanField()
+    major_capture = models.BooleanField()
+    attacker_size = models.IntegerField()
+    defender_size= models.IntegerField()
+    attacker_commander = models.TextField(max_length=200, default='', null=True)
+    defender_commander = models.TextField(max_length=200, default='', null=True)
+    summer = models.BooleanField()
+    location = models.TextField(max_length=200, default='')
+    region = models.TextField(max_length=200, default='')
+    note = models.TextField(max_length=5000, default='', null=True)

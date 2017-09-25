@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from battles import views as battle_views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^battleDetailsDisplay/$', battle_views.battle_details)
 ]
+
+

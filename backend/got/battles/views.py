@@ -13,13 +13,13 @@ def battle_details(request):
     battle_list = []
     success = True
     query = request.GET.get('q')
-    print("query ", query)
-    print("Check  ", BattleSet.objects.filter(name=query).exists())
+
     if query:
         if BattleSet.objects.filter(name=query).exists():
-            battle_list = BattleSet.objects.filter(name=query).values()            
+            battle_list = BattleSet.objects.filter(name=query).values()
+            print(">>>>>>>>>>>>>>", battle_list)
         else:
             success = False
-    
+
     return Response({"result": battle_list, "success": success})
 

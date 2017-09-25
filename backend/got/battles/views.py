@@ -10,17 +10,16 @@ import json
 @api_view(['GET'])
 def battle_details(request):
 
-    #battle_list = []
+    battle_list = []
     success = True
     query = request.GET.get('q')
-    print("query ", query)
-    print("ajbvskjb ", BattleSet.objects.filter(year=query).exists())
+
     if query:
-        if BattleSet.objects.filter(year=query).exists():
-            battle_list = list(BattleSet.objects.filter(year=query))  # contains
-            print(">>>>>>>>>>>>>>",battle_list)
+        if BattleSet.objects.filter(name=query).exists():
+            battle_list = BattleSet.objects.filter(name=query).values()  # contains
+            print(">>>>>>>>>>>>>>", battle_list)
         else:
             success = False
 
-    return Response({"result": json.dumps(battle_list), "success": success})
+    return Response({"result": battle_list, "success": success})
 
